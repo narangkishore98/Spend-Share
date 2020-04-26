@@ -16,4 +16,10 @@ class DataStore
      
         return Int.random(in: 10000000..<99999999)
     }
+    
+    
+    static func signUp() -> Bool
+    {
+        return true
+    }
 }
