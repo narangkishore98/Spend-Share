@@ -17,6 +17,10 @@
 		2E8E04602454E4C200DE238E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E045F2454E4C200DE238E /* Contact.swift */; };
 		2E8E04622454E54100DE238E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E04612454E54100DE238E /* Group.swift */; };
 		2E8E04642454E59400DE238E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E04632454E59400DE238E /* Item.swift */; };
+		2E8E04662454E68F00DE238E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E04652454E68F00DE238E /* HomeView.swift */; };
+		2E8E046824551D3100DE238E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E046724551D3100DE238E /* LoginView.swift */; };
+		2E8E046A2455246700DE238E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E04692455246700DE238E /* SignUpView.swift */; };
+		2E8E046D2455DE2C00DE238E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E046C2455DE2C00DE238E /* DataStore.swift */; };
 		5F8F7BA46BB154EAE6A11B82 /* Pods_Spend_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C22082299B7533743405449 /* Pods_Spend_Share.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +38,10 @@
 		2E8E045F2454E4C200DE238E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2E8E04612454E54100DE238E /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		2E8E04632454E59400DE238E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2E8E04652454E68F00DE238E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2E8E046724551D3100DE238E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2E8E04692455246700DE238E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		2E8E046C2455DE2C00DE238E /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		5C22082299B7533743405449 /* Pods_Spend_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spend_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2C89099742880CEB34EB4C /* Pods-Spend Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spend Share.debug.xcconfig"; path = "Target Support Files/Pods-Spend Share/Pods-Spend Share.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +79,7 @@
 		2E8E04462453310300DE238E /* Spend Share */ = {
 			isa = PBXGroup;
 			children = (
+				2E8E046B2455DDB900DE238E /* APIs */,
 				2E8E045E2454E4A900DE238E /* Models */,
 				2E8E045B2454E2CA00DE238E /* Views */,
 				2E8E04472453310300DE238E /* AppDelegate.swift */,
@@ -96,6 +105,9 @@
 		2E8E045B2454E2CA00DE238E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2E8E04652454E68F00DE238E /* HomeView.swift */,
+				2E8E046724551D3100DE238E /* LoginView.swift */,
+				2E8E04692455246700DE238E /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +120,14 @@
 				2E8E04632454E59400DE238E /* Item.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2E8E046B2455DDB900DE238E /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				2E8E046C2455DE2C00DE238E /* DataStore.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 		9BD1CCAB4485B51C354EBB93 /* Frameworks */ = {
@@ -244,10 +264,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E8E04602454E4C200DE238E /* Contact.swift in Sources */,
+				2E8E04662454E68F00DE238E /* HomeView.swift in Sources */,
 				2E8E04482453310300DE238E /* AppDelegate.swift in Sources */,
+				2E8E046D2455DE2C00DE238E /* DataStore.swift in Sources */,
 				2E8E044A2453310300DE238E /* SceneDelegate.swift in Sources */,
 				2E8E04622454E54100DE238E /* Group.swift in Sources */,
 				2E8E04642454E59400DE238E /* Item.swift in Sources */,
+				2E8E046824551D3100DE238E /* LoginView.swift in Sources */,
+				2E8E046A2455246700DE238E /* SignUpView.swift in Sources */,
 				2E8E044C2453310300DE238E /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

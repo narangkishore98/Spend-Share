@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import SwiftUI
 class Group
 {
     var contacts:[Contact] = []
     var totalExpenses:Float = 0
     var items:[Item] = []
-    
+    var color:Color  = .gray
 }
