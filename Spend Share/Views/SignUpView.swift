@@ -12,24 +12,27 @@ struct SignUpView: View {
     
     @State private var fullname = ""
     @State private var mobileNumber = ""
-    @State private var otp = ""
+    @State private var generatedOtp = ""
     @State private var stepOneCleared = false
-    
+  
     
     
     var body: some View {
         VStack(){
             Text("Spend & Share")
                 .font(.largeTitle)
+                .padding(.top, 40)
             Text("Sign Up")
             Divider().padding()
             if !stepOneCleared
             {
-                SignUpPartOne(fullname: $fullname, mobileNumber: $mobileNumber,otp: $otp, stepOneCleared:$stepOneCleared)
+                SignUpPartOne(fullname: $fullname, mobileNumber: $mobileNumber, stepOneCleared:$stepOneCleared, generatedOtp: $generatedOtp )
             }
             else{
-                 SignUpPartTwo(mobileNumber: $mobileNumber, otp: $otp)
+                SignUpPartTwo(mobileNumber: $mobileNumber, fullName: $fullname, generatedOtp: $generatedOtp)
             }
+            Spacer()
+            Text("Application Version 1.0")
            
         }
         .padding()
@@ -45,9 +48,12 @@ struct SignUpView_Previews: PreviewProvider {
 struct SignUpPartOne: View {
     @Binding var fullname:String
     @Binding var mobileNumber:String
-    @Binding var otp:String
+    
     @Binding var stepOneCleared:Bool
+    @Binding var generatedOtp:String
     @State private var notValid:Bool = false
+    
+    @State private var alreadyExist:Bool = false
     var body: some View {
         VStack(){
             TextField("Full Name", text: $fullname).textFieldStyle(RoundedBorderTextFieldStyle())
@@ -64,8 +70,19 @@ struct SignUpPartOne: View {
                 {
                     self.notValid = false
                     self.stepOneCleared = true
-                    self.otp = "\(DataStore.getOTP())"
-                    print(self.otp)
+                    
+                    if DataStore.checkIfExists(mobileNumber: self.mobileNumber)
+                    {
+                        //show alert that user already exists try login
+                        self.alreadyExist = true
+                    }
+                    else
+                    {
+                        //send them an otp
+                        self.generatedOtp = "\(DataStore.getOTP())"
+                        print(self.generatedOtp)
+                    }
+                    
                     
                     
                 }
@@ -76,6 +93,9 @@ struct SignUpPartOne: View {
                     .alert(isPresented: $notValid, content: {
                         Alert(title: Text("Please Enter the Valid Information"), message: Text("The Entered Information is incorrect please enter the correct information"), dismissButton: .default(Text("OK")))
                     })
+                .alert(isPresented: $alreadyExist, content: {
+                    Alert(title: Text("User Already Exists"), message: Text("Our Database already have an account with mobile number +1 \(mobileNumber). Please Try Login"), dismissButton: .default(Text("OK")))
+                })
             }
             .padding(5)
             .foregroundColor(Color.white)
@@ -91,13 +111,39 @@ struct SignUpPartOne: View {
 
 struct SignUpPartTwo: View {
     @Binding var mobileNumber:String
-    @Binding var otp:String
+    @Binding var fullName:String
+    @State var otp:String = ""
+    @Binding var generatedOtp:String
+    
     var body: some View {
        
         VStack(){
             TextField("Enter OTP sent at \(mobileNumber)", text: $otp)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             
+            
+            
+            Button(action: {
+                
+                if(self.generatedOtp == self.otp)
+                {
+                    print("Verified")
+                    DataStore.signUp(fullName: self.fullName , mobileNumber: self.mobileNumber)
+                }
+                else
+                {
+                    print("Not Verified")
+                }
+            })
+            {
+                Text("Verify My Number")
+            }
+            .padding(5)
+            .foregroundColor(Color.white)
+            .frame(minWidth: 0,  maxWidth:.infinity )
+                
+            .background(Color.blue)
+            .cornerRadius(7)
             
         }
     }

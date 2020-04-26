@@ -13,7 +13,6 @@
 		2E8E044E2453310700DE238E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E044D2453310700DE238E /* Assets.xcassets */; };
 		2E8E04512453310700DE238E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E04502453310700DE238E /* Preview Assets.xcassets */; };
 		2E8E04542453310700DE238E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E04522453310700DE238E /* LaunchScreen.storyboard */; };
-		2E8E045D2454E31D00DE238E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8E045C2454E31D00DE238E /* GoogleService-Info.plist */; };
 		2E8E04602454E4C200DE238E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E045F2454E4C200DE238E /* Contact.swift */; };
 		2E8E04622454E54100DE238E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E04612454E54100DE238E /* Group.swift */; };
 		2E8E04642454E59400DE238E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E04632454E59400DE238E /* Item.swift */; };
@@ -22,6 +21,7 @@
 		2E8E046A2455246700DE238E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E04692455246700DE238E /* SignUpView.swift */; };
 		2E8E046D2455DE2C00DE238E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E046C2455DE2C00DE238E /* DataStore.swift */; };
 		2E8E04702455E4B100DE238E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E046F2455E4B100DE238E /* String.swift */; };
+		2ED5F1682456270600130F9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED5F1672456270600130F9B /* GoogleService-Info.plist */; };
 		5F8F7BA46BB154EAE6A11B82 /* Pods_Spend_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C22082299B7533743405449 /* Pods_Spend_Share.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,6 @@
 		2E8E04502453310700DE238E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E8E04532453310700DE238E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E8E04552453310700DE238E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E8E045C2454E31D00DE238E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E8E045F2454E4C200DE238E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2E8E04612454E54100DE238E /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		2E8E04632454E59400DE238E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		2E8E04692455246700DE238E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2E8E046C2455DE2C00DE238E /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		2E8E046F2455E4B100DE238E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2ED5F1672456270600130F9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C22082299B7533743405449 /* Pods_Spend_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spend_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2C89099742880CEB34EB4C /* Pods-Spend Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spend Share.debug.xcconfig"; path = "Target Support Files/Pods-Spend Share/Pods-Spend Share.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 				2E8E044B2453310300DE238E /* ContentView.swift */,
 				2E8E044D2453310700DE238E /* Assets.xcassets */,
 				2E8E04522453310700DE238E /* LaunchScreen.storyboard */,
-				2E8E045C2454E31D00DE238E /* GoogleService-Info.plist */,
+				2ED5F1672456270600130F9B /* GoogleService-Info.plist */,
 				2E8E04552453310700DE238E /* Info.plist */,
 				2E8E044F2453310700DE238E /* Preview Content */,
 			);
@@ -219,7 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E8E04542453310700DE238E /* LaunchScreen.storyboard in Resources */,
-				2E8E045D2454E31D00DE238E /* GoogleService-Info.plist in Resources */,
+				2ED5F1682456270600130F9B /* GoogleService-Info.plist in Resources */,
 				2E8E04512453310700DE238E /* Preview Assets.xcassets in Resources */,
 				2E8E044E2453310700DE238E /* Assets.xcassets in Resources */,
 			);

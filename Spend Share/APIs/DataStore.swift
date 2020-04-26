@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import FirebaseDatabase
+
 class DataStore
 {
     static func getOTP() -> Int
@@ -17,9 +19,35 @@ class DataStore
         return Int.random(in: 10000000..<99999999)
     }
     
-    
-    static func signUp() -> Bool
+    static func checkIfExists(mobileNumber:String)->Bool
     {
+        var returner:Bool = false
+        var ref : DatabaseReference!
+               
+               ref = Database.database().reference()
+               ref.child("users").observeSingleEvent(of: .value, with: {(snapshot) in
+                   let users = snapshot.value as! NSDictionary
+                   
+                   for key in users.allKeys
+                   {
+                       if "\(key)" == mobileNumber
+                       {
+                           returner = true
+                           break
+                       }
+                   }
+               })
+        return returner
+    }
+    static func signUp(fullName:String, mobileNumber:String) -> Bool
+    {
+        
+        
+        var ref : DatabaseReference!
+        
+        ref = Database.database().reference()
+        
+        ref.child("users").child(mobileNumber).setValue(["fullName":fullName, "amount":0])
         return true
     }
 }
