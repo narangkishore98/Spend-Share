@@ -8,9 +8,12 @@
 
 import Foundation
 import FirebaseDatabase
-
+import SwiftUI
 class DataStore
 {
+    
+    static var backgrounds:[[Color]] = [[.red,.pink],[.yellow,.orange]]
+    
     static func getOTP() -> Int
     {
         //OTP is one time password used to sign up
@@ -30,13 +33,16 @@ class DataStore
                    
                    for key in users.allKeys
                    {
-                       if "\(key)" == mobileNumber
+                    //print("Checking: \(key) == \(mobileNumber)")
+                    if "\(key)" == mobileNumber
                        {
-                           returner = true
-                           break
+                        print("True")
+                        returner = true
+                        break
                        }
                    }
                })
+        print(returner)
         return returner
     }
     static func signUp(fullName:String, mobileNumber:String) -> Bool

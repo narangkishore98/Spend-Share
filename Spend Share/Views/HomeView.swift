@@ -7,18 +7,39 @@
 //
 
 import SwiftUI
-//@State var group = 
+//@State var group =
+
+
 struct HomeView: View {
+    
+    
+    
+    
+    init() {
+        // To remove only extra separators below the list:
+        UITableView.appearance().tableFooterView = UIView()
+
+        // To remove all separators including the actual ones:
+        UITableView.appearance().separatorStyle = .none
+    }
+    
+    
     @State var ok = false
     var body: some View {
         NavigationView(){
            List
             {
-                Text("Hello ")
-                Text("Hello ")
-                Text("Hello ")
-            }.navigationBarTitle("Spend & Share").navigationBarItems(trailing: Button("+"){
-            
+                
+           GroupView()
+                
+                    
+                 
+                 
+                
+                    
+                    
+           }.navigationBarTitle("Spend & Share").navigationBarItems(trailing: HStack {
+               Button(action: {}, label: {Text("New Group")})
            })
     
     }

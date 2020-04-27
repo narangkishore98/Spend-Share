@@ -22,6 +22,9 @@
 		2E8E046D2455DE2C00DE238E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E046C2455DE2C00DE238E /* DataStore.swift */; };
 		2E8E04702455E4B100DE238E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E046F2455E4B100DE238E /* String.swift */; };
 		2ED5F1682456270600130F9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED5F1672456270600130F9B /* GoogleService-Info.plist */; };
+		2ED5F16A24563CB100130F9B /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5F16924563CB100130F9B /* GroupView.swift */; };
+		2ED5F16C245652D200130F9B /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5F16B245652D200130F9B /* Backgrounds.swift */; };
+		2ED5F16E24566A6600130F9B /* AddGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5F16D24566A6600130F9B /* AddGroupView.swift */; };
 		5F8F7BA46BB154EAE6A11B82 /* Pods_Spend_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C22082299B7533743405449 /* Pods_Spend_Share.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		2E8E046C2455DE2C00DE238E /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		2E8E046F2455E4B100DE238E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2ED5F1672456270600130F9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2ED5F16924563CB100130F9B /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		2ED5F16B245652D200130F9B /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
+		2ED5F16D24566A6600130F9B /* AddGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupView.swift; sourceTree = "<group>"; };
 		5C22082299B7533743405449 /* Pods_Spend_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spend_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2C89099742880CEB34EB4C /* Pods-Spend Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spend Share.debug.xcconfig"; path = "Target Support Files/Pods-Spend Share/Pods-Spend Share.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +117,8 @@
 				2E8E04652454E68F00DE238E /* HomeView.swift */,
 				2E8E046724551D3100DE238E /* LoginView.swift */,
 				2E8E04692455246700DE238E /* SignUpView.swift */,
+				2ED5F16924563CB100130F9B /* GroupView.swift */,
+				2ED5F16D24566A6600130F9B /* AddGroupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +129,7 @@
 				2E8E045F2454E4C200DE238E /* Contact.swift */,
 				2E8E04612454E54100DE238E /* Group.swift */,
 				2E8E04632454E59400DE238E /* Item.swift */,
+				2ED5F16B245652D200130F9B /* Backgrounds.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,8 +285,11 @@
 			files = (
 				2E8E04602454E4C200DE238E /* Contact.swift in Sources */,
 				2E8E04702455E4B100DE238E /* String.swift in Sources */,
+				2ED5F16A24563CB100130F9B /* GroupView.swift in Sources */,
 				2E8E04662454E68F00DE238E /* HomeView.swift in Sources */,
+				2ED5F16E24566A6600130F9B /* AddGroupView.swift in Sources */,
 				2E8E04482453310300DE238E /* AppDelegate.swift in Sources */,
+				2ED5F16C245652D200130F9B /* Backgrounds.swift in Sources */,
 				2E8E046D2455DE2C00DE238E /* DataStore.swift in Sources */,
 				2E8E044A2453310300DE238E /* SceneDelegate.swift in Sources */,
 				2E8E04622454E54100DE238E /* Group.swift in Sources */,

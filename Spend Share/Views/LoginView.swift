@@ -27,6 +27,8 @@ struct LoginView: View {
             }){
                 Text("Login")
             }
+            Spacer()
+            Text("Application Version 1.0")
         }.padding()
         
             

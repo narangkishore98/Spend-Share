@@ -69,18 +69,22 @@ struct SignUpPartOne: View {
                 else
                 {
                     self.notValid = false
-                    self.stepOneCleared = true
                     
-                    if DataStore.checkIfExists(mobileNumber: self.mobileNumber)
+                    print(DataStore.checkIfExists(mobileNumber: self.mobileNumber) )
+                    
+                    if DataStore.checkIfExists(mobileNumber: self.mobileNumber) == true
                     {
+                        print("User ALready Exists")
                         //show alert that user already exists try login
                         self.alreadyExist = true
+                        self.stepOneCleared = false
                     }
                     else
                     {
                         //send them an otp
                         self.generatedOtp = "\(DataStore.getOTP())"
                         print(self.generatedOtp)
+                        self.stepOneCleared = true
                     }
                     
                     
@@ -114,7 +118,7 @@ struct SignUpPartTwo: View {
     @Binding var fullName:String
     @State var otp:String = ""
     @Binding var generatedOtp:String
-    
+    @State var incorrectOTP = false
     var body: some View {
        
         VStack(){
@@ -132,11 +136,14 @@ struct SignUpPartTwo: View {
                 }
                 else
                 {
-                    print("Not Verified")
+                    self.incorrectOTP = true
                 }
             })
             {
                 Text("Verify My Number")
+                    .alert(isPresented: $incorrectOTP, content: {
+                        Alert(title: Text("OTP Validation"),message: Text("The Entered OTP is incorrect, please try again entering the correct OTP"), dismissButton: .default(Text("OK")))
+                        })
             }
             .padding(5)
             .foregroundColor(Color.white)
