@@ -8,22 +8,73 @@
 
 import SwiftUI
 
+import Contacts
 struct AddGroupView: View {
     @State private var groupName = ""
+    
+    
+    
     var body: some View {
         
         
         VStack()
             {
-                Text("New Group")
+                HStack()
+                    {
+
+                        Text("New Group")
+                            .font(.title)
+                            .padding()
+                           
+                        Spacer()
+                        
+                        Button(action:{
+                            
+                        })
+                        {
+                            Text("Make Group").padding()
+                        }
+                    .padding()
+                }
+                .padding(.top)
+                    
                 TextField("Enter Group Name", text: $groupName)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                Divider()
+                HStack(){
+                    Text("Select Multiple Contacts to add")
+                    .foregroundColor(.secondary)
+                    Spacer()
+                }
+                .padding()
+                    
+                List( list) { contact in
+                    
+                    Button(action: {print("CLicked")}){
+                        ContactRowView(contact: contact)
+                    }
+                    
+                }
+             
+             
+                Spacer()
+                
+                
                 
             
-        }
-        
+        }.navigationBarItems(trailing: HStack(){
+            Button(action: {
+                
+            }){
+                Text("Add")
+            }
+        })
     }
+    
+    
+    var list = DataStore.getContacts()
+    
 }
 
 struct AddGroupView_Previews: PreviewProvider {

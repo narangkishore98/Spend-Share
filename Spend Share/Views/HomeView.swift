@@ -12,15 +12,17 @@ import SwiftUI
 
 struct HomeView: View {
     
-    
+
+
+    @State var addGroup = false
     
     
     init() {
-        // To remove only extra separators below the list:
-        UITableView.appearance().tableFooterView = UIView()
+     // To remove only extra separators below the list:
+          UITableView.appearance().tableFooterView = UIView()
 
-        // To remove all separators including the actual ones:
-        UITableView.appearance().separatorStyle = .none
+          // To remove all separators including the actual ones:
+          UITableView.appearance().separatorStyle = .none
     }
     
     
@@ -39,10 +41,19 @@ struct HomeView: View {
                     
                     
            }.navigationBarTitle("Spend & Share").navigationBarItems(trailing: HStack {
-               Button(action: {}, label: {Text("New Group")})
+               Button(action: {
+            
+               // print(DataStore.getContacts(),"Contacts")
+                
+                self.addGroup = true
+                
+               }, label: {Image(systemName: "plus.circle")})
            })
     
-    }
+        }.sheet(isPresented: $addGroup)
+        {
+            AddGroupView()
+        }
 }
 }
 

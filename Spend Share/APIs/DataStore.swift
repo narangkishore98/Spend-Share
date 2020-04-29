@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseDatabase
 import SwiftUI
+import Contacts
 class DataStore
 {
     
@@ -55,5 +56,56 @@ class DataStore
         
         ref.child("users").child(mobileNumber).setValue(["fullName":fullName, "amount":0])
         return true
+    }
+    
+    
+    static func getContacts() -> [Contact]
+    {
+        let contactStore = CNContactStore()
+        let keysToFetch = [
+                           CNContactPhoneNumbersKey,
+                           CNContactThumbnailImageDataKey,
+                           CNContactGivenNameKey,
+            ] as [CNKeyDescriptor]
+        
+        var allContainers : [CNContainer] = []
+        
+        do{
+            allContainers = try contactStore.containers(matching: nil)
+            
+        }
+        catch
+        {
+            print("Unable To Fetch Contacts")
+        }
+        
+        var results : [Contact] = []
+        for container in allContainers
+        {
+            let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier:container.identifier)
+            
+            do
+            {
+                let containerResult = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch)
+                
+                    for res in containerResult
+                    {
+                        
+                        
+                        for num in  res.phoneNumbers
+                        {
+                            results.append(Contact(number: num.value.stringValue, fullName: res.givenName))
+                        }
+                }
+            }
+            catch
+            {
+                print("Unable to fetch from containers")
+            }
+        }
+        
+        return results
+        
+        
     }
 }
