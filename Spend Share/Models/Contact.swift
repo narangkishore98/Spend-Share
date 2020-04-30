@@ -9,14 +9,15 @@
 import Foundation
 import SwiftUI
 
-struct Contact : Hashable, Identifiable
+struct Contact : Identifiable, Hashable
 {
     static func == (lhs: Contact, rhs: Contact) -> Bool {
-       return true
+        return lhs.contactNum == rhs.contactNum
     }
     
+    
     func hash(into hasher: inout Hasher) {
-        
+        hasher.combine(fullName+contactNum)
     }
   
     

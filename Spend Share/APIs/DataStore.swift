@@ -95,6 +95,8 @@ class DataStore
                         for num in  res.phoneNumbers
                         {
                             results.append(Contact(number: num.value.stringValue, fullName: res.givenName))
+                            
+                        
                         }
                 }
             }
@@ -103,9 +105,32 @@ class DataStore
                 print("Unable to fetch from containers")
             }
         }
-        
+    
         return results
         
         
     }
+    
+    //get the user information whoever is logged in in this computer. 
+    static func getUserInformation() -> Contact
+    {
+        
+        
+        var phoneNumber = UserDefaults.standard.string(forKey: "phoneNumberLoggedIn")
+        
+        
+        
+        return Contact(number: "", fullName: "")
+    }
+    
+    // making a group
+    static func makeGroup(groupName: String, members:Set<Contact>) -> Bool
+    {
+        return true
+    }
+    
+    
+    
+    
+    
 }

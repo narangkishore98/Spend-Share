@@ -18,6 +18,8 @@ struct ContactRowView: View {
     
     func image() -> Image
     {
+        print(contact.fullName)
+        
         if let _ = contact.imageData
         {
             return Image(uiImage: UIImage(data: contact.imageData!)!)
@@ -31,7 +33,7 @@ struct ContactRowView: View {
     var body: some View {
 
         HStack(){
-            Image(systemName:"person.circle")
+            image()
                 .font(.largeTitle)
                 .frame(width:50,height:50)
             VStack(alignment: .leading)

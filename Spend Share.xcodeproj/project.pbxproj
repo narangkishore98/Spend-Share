@@ -26,6 +26,7 @@
 		2ED5F16C245652D200130F9B /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5F16B245652D200130F9B /* Backgrounds.swift */; };
 		2ED5F16E24566A6600130F9B /* AddGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5F16D24566A6600130F9B /* AddGroupView.swift */; };
 		2ED5F170245A251000130F9B /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5F16F245A251000130F9B /* ContactRowView.swift */; };
+		2ED5F172245B34A900130F9B /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5F171245B34A900130F9B /* DemoView.swift */; };
 		5F8F7BA46BB154EAE6A11B82 /* Pods_Spend_Share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C22082299B7533743405449 /* Pods_Spend_Share.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		2ED5F16B245652D200130F9B /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
 		2ED5F16D24566A6600130F9B /* AddGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupView.swift; sourceTree = "<group>"; };
 		2ED5F16F245A251000130F9B /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
+		2ED5F171245B34A900130F9B /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
 		5C22082299B7533743405449 /* Pods_Spend_Share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spend_Share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2C89099742880CEB34EB4C /* Pods-Spend Share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spend Share.debug.xcconfig"; path = "Target Support Files/Pods-Spend Share/Pods-Spend Share.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				2ED5F16924563CB100130F9B /* GroupView.swift */,
 				2ED5F16D24566A6600130F9B /* AddGroupView.swift */,
 				2ED5F16F245A251000130F9B /* ContactRowView.swift */,
+				2ED5F171245B34A900130F9B /* DemoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				2E8E04482453310300DE238E /* AppDelegate.swift in Sources */,
 				2ED5F16C245652D200130F9B /* Backgrounds.swift in Sources */,
 				2E8E046D2455DE2C00DE238E /* DataStore.swift in Sources */,
+				2ED5F172245B34A900130F9B /* DemoView.swift in Sources */,
 				2E8E044A2453310300DE238E /* SceneDelegate.swift in Sources */,
 				2E8E04622454E54100DE238E /* Group.swift in Sources */,
 				2E8E04642454E59400DE238E /* Item.swift in Sources */,

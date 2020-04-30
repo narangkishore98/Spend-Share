@@ -10,67 +10,61 @@ import SwiftUI
 
 import Contacts
 struct AddGroupView: View {
-    @State private var groupName = ""
+    
+   
+    @State var groupName = ""
+    @State var list = DataStore.getContacts()
     @State var editMode = EditMode.active
-    
     @State var selection = Set<Contact>()
-    
-    
+    @State var textToShow = "Choose one or more contacts to add."
     
     var body: some View {
         
-        
-        VStack()
-            {
-                HStack()
-                    {
-
-                        Text("New Group")
-                            .font(.title)
-                            .padding()
-                           
-                        Spacer()
+        VStack(){
+            
+            HStack()
+                {
+                    Text("Group").font(.title).fontWeight(.bold)
+                    Spacer()
+                    Button(action:{
                         
-                        Button(action:{
-                            
-                        })
-                        {
-                            Text("Make Group").padding()
-                        }
-                    .padding()
-                }
-                .padding(.top)
+                        print(self.selection)
+                        print(self.groupName)
+                        
+                    }){
+                        Text("Make Group")
+                    }
                     
-                TextField("Enter Group Name", text: $groupName)
+            }.padding()
+            TextField("Group Name", text: $groupName)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-                Divider()
-                HStack(){
-                    Text("Select Multiple Contacts to add")
-                    .foregroundColor(.secondary)
+            Divider()
+            HStack()
+                {
+
+                    Text(textToShow).foregroundColor(.secondary)
                     Spacer()
-                }
-                .padding()
+            }
+            .padding()
+        List(selection:$selection)
+        {
+            ForEach(list, id: \.self , content: {
+                contact in
+                Button(action:{
                     
-               
-                
-                List(selection: $selection) {
-                    ForEach(list, id:\.self) { contact in
-                        
-                        ContactRowView(contact: contact)
-                    }
+                    print("Click")
+                    self.textToShow = "\(self.selection.count) Contact(s) selected."
+                })
+                {
+                ContactRowView(contact: contact)
                 }
-             
-                Spacer()
-                
-                
-                
-            
+            })
         }
+        .environment(\.editMode, $editMode)
+        }
+        
     }
-    
-    
-    var list = DataStore.getContacts()
     
 }
 
