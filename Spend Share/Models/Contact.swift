@@ -8,12 +8,16 @@
 
 import Foundation
 import SwiftUI
-struct Contact : Identifiable, Equatable
+
+struct Contact : Hashable, Identifiable
 {
     static func == (lhs: Contact, rhs: Contact) -> Bool {
        return true
     }
     
+    func hash(into hasher: inout Hasher) {
+        
+    }
   
     
     

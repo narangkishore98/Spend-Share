@@ -11,6 +11,9 @@ import SwiftUI
 import Contacts
 struct AddGroupView: View {
     @State private var groupName = ""
+    @State var editMode = EditMode.active
+    
+    @State var selection = Set<Contact>()
     
     
     
@@ -49,27 +52,21 @@ struct AddGroupView: View {
                 }
                 .padding()
                     
-                List( list) { contact in
-                    
-                    Button(action: {print("CLicked")}){
+               
+                
+                List(selection: $selection) {
+                    ForEach(list, id:\.self) { contact in
+                        
                         ContactRowView(contact: contact)
                     }
-                    
                 }
-             
              
                 Spacer()
                 
                 
                 
             
-        }.navigationBarItems(trailing: HStack(){
-            Button(action: {
-                
-            }){
-                Text("Add")
-            }
-        })
+        }
     }
     
     

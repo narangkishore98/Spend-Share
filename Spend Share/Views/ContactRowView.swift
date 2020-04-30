@@ -13,6 +13,8 @@ struct ContactRowView: View {
     
     var contact:Contact
     
+
+    
     
     func image() -> Image
     {
@@ -39,6 +41,8 @@ struct ContactRowView: View {
                     .foregroundColor(.secondary)
             }
             Spacer()
+            
+          
         }
 
     }
@@ -49,3 +53,8 @@ struct ContactRowView_Previews: PreviewProvider {
         ContactRowView(contact: Contact(number: "647-763-9826", fullName: "Kishore Narang"))
     }
 }
+
+
+
+
+
